@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'story_brain.dart';
+import 'story.dart';
 
 //TODO: Step 15 - Run the app and see if you can see the screen update with the first story. Delete this TODO if it looks as you expected.
 
@@ -20,15 +22,16 @@ class StoryPage extends StatefulWidget {
 }
 
 class _StoryPageState extends State<StoryPage> {
+  Chessboard myChessboard = Chessboard();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         
-        
+ //TODO: Step 1 - Change the background image to a chess theme.       
         decoration: const BoxDecoration(
        image: DecorationImage(
-              image: AssetImage('images/background.png'),
+              image: AssetImage('images/chess_background.jpg'),
               fit: BoxFit.cover,
               repeat: ImageRepeat.noRepeat,
        ),
@@ -43,8 +46,8 @@ class _StoryPageState extends State<StoryPage> {
                 flex: 12,
                 child: Center(
                   child: Text(
-                    //TODO: Step 10 - use the storyBrain to get the first story title and display it in this Text Widget.
-                    'Story text will go here.',
+                    //TODO: Stesquarep 10 - use the storyBrain to get the first story title and display it in this Text Widget.
+                    myChessboard.randomSquare(),
                     style: TextStyle(
                       fontSize: 25.0,
                     ),
